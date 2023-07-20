@@ -1,6 +1,8 @@
 package org.example;
 
-public class City {
+import java.util.Comparator;
+
+public class City implements Comparable<City>{
     private int id;
     private String name;
     private String region;
@@ -78,4 +80,11 @@ public class City {
                 ", foundation='" + foundation + '\'' +
                 '}';
     }
+
+    @Override
+    public int compareTo(City o) {
+        return this.name.compareTo(o.name);
+    }
 }
+
+
