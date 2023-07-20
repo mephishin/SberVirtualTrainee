@@ -27,6 +27,8 @@ public class Main {
         for (City city: cityList2) {
             System.out.println(city);
         }
+        // Вывод айди города максимального по населению
+        System.out.println(City.findMax(cityList));
     }
 }
 

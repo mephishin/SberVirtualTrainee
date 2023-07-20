@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Comparator;
+import java.util.List;
 
 public class City implements Comparable<City>{
     private int id;
@@ -84,6 +84,21 @@ public class City implements Comparable<City>{
     @Override
     public int compareTo(City o) {
         return this.name.compareTo(o.name);
+    }
+
+    public static String findMax(List<City> cityList) {
+        int max = 0;
+        City maxPopCity = null;
+        int cur = 0;
+        for (City city: cityList) {
+            cur = city.getPopulation();
+            if (cur > max) {
+                max = cur;
+                maxPopCity = city;
+            }
+        }
+        assert maxPopCity != null;
+        return "[" + maxPopCity.getId() + "]" + " = " + max;
     }
 }
 
